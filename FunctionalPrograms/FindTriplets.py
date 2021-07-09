@@ -2,7 +2,7 @@
 @Author: Naziya
 @Date: 2021-10-08
 @Last Modified by: Naziya
-@Last Modified Time: 2021-10-08 00:1:00
+@Last Modified Time: 2021-10-08 00:1:10
 @Title: Aim of the program is to find triplets whose sum is zero.
 '''
 
