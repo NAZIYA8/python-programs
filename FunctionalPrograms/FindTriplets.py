@@ -32,7 +32,7 @@ if __name__ == "__main__":
         print("Enter the array elements")
         for i in range(elements):
             array.append(int(input()))
-            
+
         # calling function    
         print(findTriplets(array,elements))
 
