@@ -3,7 +3,7 @@
 @Date: 14-07-2012
 @Last Modified by: Naziya
 @Last Modified Time: 14-07-2012
-@Title: Aim of the program is AddressBook Problem using oops concept
+@Title: Aim of the program is Inventory Management System using oops concept
 
 '''
 
