@@ -39,5 +39,6 @@ class StockPortfolio:
 
 # Driver code for above Code
 if __name__ == "__main__":
-    stockport = StockPortfolio("ObjectOrientedPrograms/StockManagementSystem/stockportfolio.json")
+    stockport = StockPortfolio("./stockportfolio.json")
     stockport.stock_calculations()
+
