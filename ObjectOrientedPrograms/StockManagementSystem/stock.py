@@ -3,7 +3,8 @@
 @Date: 14-07-2021
 @Last Modified by: Naziya
 @Last Modified Time: 14-07-2021
-@Title: Program on Deck Of Cards 
+@Title: Program on Stock Management System to calculate the value of 
+        stocks in each company and total value of stock portfolio.
 '''
 
 import json
