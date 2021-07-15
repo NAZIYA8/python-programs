@@ -1,16 +1,16 @@
 '''
 @Author: Naziya
-@Date: 13-07-2012
+@Date: 13-07-2021
 @Last Modified by: Naziya
-@Last Modified Time: 13-07-2012
-@Title: Aim of the program is AddressBook Problem using oops concept
-
+@Last Modified Time: 13-07-2021
+@Title: Aim of the program is AddressBook Problem using oops concept.
 '''
 
 
 import json
 from logging import ERROR, exception
 from LoggerFormat import logger
+from UserDetailsValidation import ValidateDetails
 
 class AddressBook:
 
@@ -39,28 +39,22 @@ class AddressBook:
         Pararmeter:
             self is an instance of the object
         """ 
-        while True:
-            try:
-                user_fname = input("Please enter First Name :\n")
-                user_lname = input("Please Enter Last Name :\n")
-                user_address = input("Please Enter Address :\n")
-                user_city = input("Please Enter City :\n")
-                user_state = input("Please Enter State :\n")
-                user_zip = int(input("Please Enter Zip Code :\n"))
-                user_phone = int(input("Please Enter Phone Number :\n"))
-            except Exception as err:
-                logger.error(err)
-            else:
-                break
-    
-        user_data = dict()  # Creating a dictionary to keep details of new entry
-        user_data['fname'] = user_fname
-        user_data['lname'] = user_lname
-        user_data['address'] = user_address
-        user_data['city'] = user_city
-        user_data['state'] = user_state
-        user_data['zip'] = user_zip
-        user_data['phone'] = user_phone
+        user_data = dict() # Creating a dictionary to keep details of new entry
+
+        user_fname = ValidateDetails.validateFirstName()
+        user_data['user_fname'] = user_fname
+        user_lname = ValidateDetails.validateLastName()
+        user_data['user_lname'] = user_lname
+        user_address = ValidateDetails.validateAddress()
+        user_data['user_address'] = user_address
+        user_city = ValidateDetails.validateCity()
+        user_data['user_city'] = user_city
+        user_state = ValidateDetails.validateState()
+        user_data['user_state'] = user_state
+        user_zip = ValidateDetails.validateZipcode()
+        user_data['user_zip'] = user_zip
+        user_phone = ValidateDetails.validateNumber()
+        user_data['user_phone'] = user_phone
         self.data['addressbook'].append(user_data)  # Adding dictionary to data
 
 
@@ -73,26 +67,27 @@ class AddressBook:
         """  
         logger.info("-------EDIT--------")
         try:
-            user_fname = input("\nEnter First Name of User who's entry you would like to update :\n")
-            user_lname = input("\nEnter Last Name of User who's entry you would like to update :\n")
+            print("First name and Last name of the user who's entry you would like to update:\n")
+            user_fname = ValidateDetails.validateFirstName()
+            user_lname = ValidateDetails.validateLastName()
             if self.search_entries(user_fname, user_lname) is True:  # Check if person exists in AddressBook
                 for item in self.data['addressbook']:
                     # Checking for if both first name and last name point to the same item
-                    if (user_fname == item['fname']) and (user_lname == item['lname']):
+                    if (user_fname == item['user_fname']) and (user_lname == item['user_lname']):
                         logger.info('What Parameter would you like to update? \n')
                         logger.info("1. Address\n2. City\n3. State\n4. Zip\n5. Phone\n")
                         user_choice = int(input("Please choose number 1-5 to update : \t"))
                         if user_choice in range(1, 5):
-                            user_addr = input("\nPlease Updated Enter Address :")
-                            user_city = input("\nPlease Updated Enter City : ")
-                            user_state = input("\nPlease Updated Enter State : ")
-                            user_zip = int(input("\nEnter Updated Zip Code :"))
+                            user_address = ValidateDetails.validateAddress()
+                            user_city = ValidateDetails.validateCity()
+                            user_state = ValidateDetails.validateState()
+                            user_zip = ValidateDetails.validateZipcode()
                             # Re-assigning Values to self.data as we are editing
-                            item['address'], item['city'], item['state'] = user_addr, user_city, user_state
-                            item['zip'] = user_zip
+                            item['user_address'], item['user_city'], item['user_state'] = user_address, user_city, user_state
+                            item['user_zip'] = user_zip
                         elif user_choice == 5:
-                            user_phone = int(input("Please Enter Updated Phone Number :"))
-                            item['phone'] = user_phone
+                            user_phone = ValidateDetails.validateNumber()
+                            item['user_phone'] = user_phone
                         elif user_choice == 6:
                             break
                         else:
@@ -112,13 +107,14 @@ class AddressBook:
         """    
         logger.info("------Delete-------")
         try:
-            user_fname = input("Enter First Name of Entry you would like to Delete :")
-            user_lname = input("Enter Last Name of Entry you would like to Delete :")
+            print("First name and Last name of the user who's entry you would like to delete: \n")
+            user_fname = ValidateDetails.validateFirstName()
+            user_lname = ValidateDetails.validateLastName()
             count = 0
             if self.search_entries(user_fname, user_lname) is True:  # Delete possible only when Person exists in AddBook
                 for item in self.data['addressbook']:
                     # First name and Last need to point to same person
-                    if (user_lname == item['lname']) and (user_fname == item['fname']):
+                    if (user_lname == item['user_lname']) and (user_fname == item['user_fname']):
                         del (self.data['addressbook'][count])
                     else:
                         count += 1
@@ -136,9 +132,9 @@ class AddressBook:
         """
         logger.info("\n\tEntries\n")
         for item in self.data['addressbook']:
-            print("Name :",item['fname'],item['lname'])
-            print("Address :",item['address'],"\nCity :",item['city'],"\nState : ",item['state'])
-            print("Zip :",item['zip'],"\nPhone :",item['phone'])
+            print("Name :",item['user_fname'],item['user_lname'])
+            print("Address :",item['user_address'],"\nCity :",item['user_city'],"\nState : ",item['user_state'])
+            print("Zip :",item['user_zip'],"\nPhone :",item['user_phone'])
             print("\n")
 
     def search_entries(self, user_fname, user_lname):
@@ -152,7 +148,7 @@ class AddressBook:
         """ 
         logger.info("-----Search--------")
         for entry in self.data['addressbook']:
-            if user_fname == entry['fname'] and user_lname == entry['lname']:
+            if user_fname == entry['user_fname'] and user_lname == entry['user_lname']:
                 return True
         return False
 
