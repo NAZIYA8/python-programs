@@ -1,8 +1,8 @@
 '''
 @Author: Naziya
-@Date: 14-07-2012
+@Date: 14-07-2021
 @Last Modified by: Naziya
-@Last Modified Time: 14-07-2012
+@Last Modified Time: 14-07-2021
 @Title: Aim of the program is Inventory Management System using oops concept
 
 '''
