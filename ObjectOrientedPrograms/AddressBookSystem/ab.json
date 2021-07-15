@@ -1,0 +1,31 @@
+{
+  "addressbook": [
+    {
+      "fname": "Syeda",
+      "lname": "Naziya",
+      "address": "xyz",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zip": 560056,
+      "phone": 9876543210
+    },
+    {
+      "fname": "Ashima",
+      "lname": "Arora",
+      "address": "abc",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zip": 230532,
+      "phone": 9584763215
+    },
+    {
+      "fname": "maryam",
+      "lname": "mehreen",
+      "address": "lmno",
+      "city": "mysore",
+      "state": "Karnataka",
+      "zip": 564645,
+      "phone": 2587413691
+    }
+  ]
+}
