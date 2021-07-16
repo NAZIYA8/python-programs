@@ -15,7 +15,7 @@ class AddBook:
 
     def main(self):
 
-        address_book = addressbook.AddressBook("./ab.json")  # Create Address Book obj
+        address_book = addressbook.AddressBook("./addbook.json")  # Create Address Book obj
         address_book.open()  # Open Address Book
         logger.info("ADDRESS BOOK")
         logger.info
