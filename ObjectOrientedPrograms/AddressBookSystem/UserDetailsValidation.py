@@ -66,7 +66,7 @@ class ValidateDetails:
         try:
             while True:
                     user_phone = input(" Enter Your Mobile Number : ")
-                    if re.match("[0-9]{10}$", user_phone):
+                    if re.match("^[0-9]{2}\\s{1}[0-9]{10}", user_phone):
                         return user_phone
                     else:
                         logger.error("Mobile number should be in this format (+91-8235465768) ")
