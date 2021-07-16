@@ -60,8 +60,8 @@ class TestUserDetailsValidation(unittest.TestCase):
 
         self.assertFalse(validate.validateLastName("syeda"))
         self.assertFalse(validate.validateLastName("Sy"))
-        self.assertFalse(validate.validateFirstName("sy45"))
-        self.assertFalse(validate.validateFirstName("Sy*e@"))
+        self.assertFalse(validate.validateLastName("sy45"))
+        self.assertFalse(validate.validateLastName("Sy*e@"))
 
 
     def test_whenGivenValidMobileNumber_shouldReturnTrue(self):
@@ -82,7 +82,7 @@ class TestUserDetailsValidation(unittest.TestCase):
             It takes self as a parameter.
         """
 
-        self.assertFalse(validate.validateNumber("9166966"))
+        self.assertFalse(validate.validateNumber("91 66966"))
         self.assertFalse(validate.validateNumber("91914586259852"))
         self.assertFalse(validate.validateNumber("919876543210"))
 
