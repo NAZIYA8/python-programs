@@ -1,0 +1,23 @@
+{
+    "rice": [
+        {
+            "name": "sona masuri",
+            "weight": 6,
+            "price_per_kg": 60
+        }
+    ],
+    "pulses": [
+        {
+            "name": "rajma",
+            "weight": 7,
+            "price_per_kg": 150
+        }
+    ],
+    "wheat": [
+        {
+            "name": "red wheat",
+            "weight": 12,
+            "price_per_kg": 96
+        }
+    ]
+}
