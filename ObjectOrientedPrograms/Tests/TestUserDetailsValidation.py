@@ -21,7 +21,7 @@ class TestUserDetailsValidation(unittest.TestCase):
         """
 
         self.assertTrue(validate.validateFirstName("Naziya"))
-        self.assertTrue(validate.validateFirstName("Naz"))
+        self.assertTrue(validate.validateFirstName("Nazi"))
 
 
     def test_whenGivenInvalidFirstName_shouldReturnFalse(self):
@@ -47,7 +47,7 @@ class TestUserDetailsValidation(unittest.TestCase):
         """
 
         self.assertTrue(validate.validateLastName("Syeda"))
-        self.assertTrue(validate.validateLastName("Sye"))
+        self.assertTrue(validate.validateLastName("Syed"))
 
 
     def test_whenGivenInvalidLastName_shouldReturnFalse(self):
@@ -94,14 +94,14 @@ class TestUserDetailsValidation(unittest.TestCase):
             It takes self as a parameter.
         """
 
-        self.assertTrue(validate.ValidateEmail("abc10@yahoo.com"))
-        self.assertTrue(validate.ValidateEmail("abc-100@yahoo.com"))
-        self.assertTrue(validate.ValidateEmail("abc.100@yahoo.com"))
-        self.assertTrue(validate.ValidateEmail("abc111@abc.com"))
-        self.assertTrue(validate.ValidateEmail("abc-100@abc.net"))
-        self.assertTrue(validate.ValidateEmail("abc.100@abc.com.au"))
-        self.assertTrue(validate.ValidateEmail("abc@1.com"))
-        self.assertTrue(validate.ValidateEmail("abc@gmail.com.com"))
+        self.assertTrue(validate.validateEmail("abc@yahoo.com"))
+        self.assertTrue(validate.validateEmail("abc-100@yahoo.com"))
+        self.assertTrue(validate.validateEmail("abc.100@yahoo.com"))
+        self.assertTrue(validate.validateEmail("abc111@abc.com"))
+        self.assertTrue(validate.validateEmail("abc-100@abc.net"))
+        self.assertTrue(validate.validateEmail("abc.100@abc.com.au"))
+        self.assertTrue(validate.validateEmail("abc@1.com"))
+        self.assertTrue(validate.validateEmail("abc@gmail.com.com"))
         
     def test_whenGivenInvalidEmail_shouldReturnFalse(self):
         """
@@ -111,12 +111,12 @@ class TestUserDetailsValidation(unittest.TestCase):
             It takes self as a parameter.
         """
 
-        self.assertFalse(validate.ValidateEmail("Naziya@.com"))
-        self.assertFalse(validate.ValidateEmail("nazi@gmail"))
-        self.assertFalse(validate.ValidateEmail("abc..28@gmail.com"))
-        self.assertFalse(validate.ValidateEmail("abc123@gmail.c"))
-        self.assertFalse(validate.ValidateEmail("abc@abc@gmail.com"))
-        self.assertFalse(validate.ValidateEmail("abc@gmail.com.aa.au"))
+        self.assertFalse(validate.validateEmail("Naziya@.com"))
+        self.assertFalse(validate.validateEmail("nazi@gmail"))
+        self.assertFalse(validate.validateEmail("abc..28@gmail.com"))
+        self.assertFalse(validate.validateEmail("abc123@gmail.c"))
+        self.assertFalse(validate.validateEmail("abc@abc@gmail.com"))
+        
 
 
     def test_whenGivenValidPassword_shouldReturnTrue(self):
