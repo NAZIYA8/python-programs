@@ -10,7 +10,7 @@
 import array
 from LoggerFormat import logger
 
-def Occurence(myArray):
+def occurence(myArray):
     """
     Description:
         This function is used to find number of occurence of element in array
@@ -30,7 +30,7 @@ def Occurence(myArray):
 if __name__ == "__main__":
     try:
         myArray = array.array("i",[10,20,10,50,60,10,80,10,90,10])
-        Occurence(myArray)
+        occurence(myArray)
     
     except Exception as err:
         logger.error(err)
