@@ -3,12 +3,17 @@
 @Date: 21-07-2021
 @Last Modified by: Naziya
 @Last Modified: 21-07-2021
-@Title: Aim of the program is to clone list
+@Title: Aim of the program is to append list to a second list
 '''
 
 from LoggerFormat import logger
 
 def appendList():
+    """
+    Description:
+        This function is used to append to the list  
+    """
+
     try:
         list1 = [1,2,[3,4],"list",67]
         list2 = [43,21,2,0,(3,4)]
