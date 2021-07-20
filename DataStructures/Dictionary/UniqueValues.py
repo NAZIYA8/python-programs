@@ -22,7 +22,9 @@ def uniqueValues():
         logger.info("Unique Values are: ")
         unique = list(set(val for items in dict for val in items.values()))
         logger.info(unique)
-
+        a= [val for items in dict for val in items.values()]
+        print(type(a))
+        print(a)
     except Exception as err:
         logger.error(err)
 
