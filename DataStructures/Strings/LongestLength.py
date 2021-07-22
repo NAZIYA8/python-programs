@@ -20,9 +20,10 @@ def longestLength():
             for word in wordList:
                 finalList.append((len(word), word))
             finalList.sort() 
-            print("The length of longest word is ",len(finalList[-1][1]))
+            logger.info("The length of longest word is ")
+            logger.info(len(finalList[-1][1]))
     except Exception as err:
-        print(err)
+        logger.info(err)
 
 # Driver Code
 longestLength()
